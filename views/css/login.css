@@ -14,6 +14,10 @@ body {
     background-color:none;
 }
 
+.control-label{
+  color: whitesmoke;
+}
+
   .container{
     height: 100%;
     align-content: center;
@@ -22,7 +26,7 @@ body {
     .vertical-center {
         min-height: 90vh;
   }
-    .card{
+    .card-login{
     height: 370px;
     margin-top: auto;
     margin-bottom: auto;
@@ -30,6 +34,13 @@ body {
     background-color: rgba(0,0,0,0.5) !important;
     }
     
+    .card-register{
+      height: 630px;
+      margin-top: auto;
+      margin-bottom: auto;
+      width: 400px;
+      background-color: rgba(0,0,0,0.5) !important;
+    }
     .card-header h3{
     color: white;
     }

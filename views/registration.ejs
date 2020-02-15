@@ -1,0 +1,81 @@
+<%- include('./Templates/headerTemp'); -%>
+<div class="container">
+    <div class="d-flex justify-content-center vertical-center">
+        <div class="card card-register">
+            <div class="card-header">
+                <h3>Register</h3>
+            </div>
+            <div class="card-body">
+                <form method="post" action="#">
+                    <div class="form-group">
+                        <label for="name" class="cols-sm-2 control-label">Your Name</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                                    <i class="fas fa-user"></i>
+                                </span>
+                                <input type="text" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" name="name" id="name"   
+                                    placeholder="Enter your Name" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="cols-sm-2 control-label">Your Email</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                                    <i class="fas fa-envelope"></i>
+                                </span>
+                                <input type="text" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" name="email" id="email"
+                                    placeholder="Enter your Email" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="username" class="cols-sm-2 control-label">Username</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                                    <i class="fas fa-users"></i>
+                                </span>
+                                <input type="text" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" name="username" id="username"
+                                    placeholder="Enter your Username" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="cols-sm-2 control-label">Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" name="password" id="password"
+                                    placeholder="Enter your Password" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+                        <div class="cols-sm-10">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" style="border-top-right-radius: 0;border-bottom-right-radius: 0;">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                                <input type="password" class="form-control" style="border-top-left-radius: 0;border-bottom-left-radius: 0;" name="confirm" id="confirm"
+                                    placeholder="Confirm your Password" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group ">
+                        <button type="button" class="btn btn-lg btn-block login_btn">Register</button>
+                    </div>
+                    <div class="login-register">
+                        <a href="/">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include('./Templates/footerTemp'); -%>
