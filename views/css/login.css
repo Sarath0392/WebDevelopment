@@ -5,6 +5,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     height: 100%;
+    position: fixed;
     font-family: 'Numans', sans-serif;
 }
 
