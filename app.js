@@ -73,10 +73,10 @@ app.post('/register', function (req, res) {
 });
 
 //Routes
-// app.listen(process.env.PORT, process.env.IP, function(){
-// 	console.log('server listening on port 3000');
-// });
-
-app.listen(3000, function () {
+app.listen(process.env.PORT, process.env.IP, function(){
 	console.log('server listening on port 3000');
 });
+
+// app.listen(3000, function () {
+// 	console.log('server listening on port 3000');
+// });
