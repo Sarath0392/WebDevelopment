@@ -3,7 +3,6 @@ var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require('mongoose');
 var registerModel = require("./models/registrationModel");
-var errorMsg = '';
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.set('view engine', "ejs");
@@ -28,7 +27,13 @@ app.get('/', function (req, res) {
 
 app.get('/register', function (req, res) {
 	errorMsg = '';
-	res.render("registration",{errorMsg : errorMsg});
+	userName = '';
+	email = '';
+	res.render("registration", {
+		errorMsg: errorMsg,
+		userName: userName,
+		email: email
+	});
 });
 
 app.post('/register', function (req, res) {
@@ -47,12 +52,18 @@ app.post('/register', function (req, res) {
 			if (user != null) {
 				flag = false;
 				errorMsg = "UserId already exists"
-				res.render("registration",{errorMsg : errorMsg});
+				res.render("registration",
+					{
+						errorMsg: errorMsg,
+						userName: userName,
+						email: email
+					}
+				);
 			} else {
 				flag = true;
 			}
 		}
-	}); 
+	});
 	if (flag) {
 		var newRegistration = {
 			userName: userName,
@@ -73,10 +84,10 @@ app.post('/register', function (req, res) {
 });
 
 //Routes
-app.listen(process.env.PORT, process.env.IP, function(){
-	console.log('server listening on port 3000');
-});
-
-// app.listen(3000, function () {
+// app.listen(process.env.PORT, process.env.IP, function(){
 // 	console.log('server listening on port 3000');
 // });
+
+app.listen(3000, function () {
+	console.log('server listening on port 3000');
+});
