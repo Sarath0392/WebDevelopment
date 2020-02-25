@@ -34,11 +34,5 @@ function validateUserId(userName){
         document.getElementById("it_username").setCustomValidity('Please enter the Username');
     }else if(oldVal !== null && newVal !== null && newVal !== oldVal){
         document.getElementById("it_username").setCustomValidity('');
-    }else if(oldVal !== null && newVal !== null && newVal === oldVal){
-        if(h1_errMsg.textContent !== ''){
-            document.getElementById("it_username").setCustomValidity('UserId already exists');
-        }else{
-            document.getElementById("it_username").setCustomValidity('');
-        }
     }
 }

@@ -42,15 +42,13 @@ app.post('/register', function (req, res) {
 		username = req.body.username,
 		password = req.body.password,
 		cnfpassword = req.body.confirm;
-	var flag = false;
 	errorMsg = '';
-	registerModel.find({ userName: userName }, function (err, user) {
+	registerModel.find({ userId: username }, function (err, user) {
 		if (err) {
 			console.log(err);
 		}
 		else {
-			if (user != null) {
-				flag = false;
+			if (user.length == 1) {
 				errorMsg = "UserId already exists"
 				res.render("registration",
 					{
@@ -60,34 +58,31 @@ app.post('/register', function (req, res) {
 					}
 				);
 			} else {
-				flag = true;
+				var newRegistration = {
+					userName: userName,
+					emailId: email,
+					userId: username,
+					password: password,
+					confirmPassword: cnfpassword
+				};
+					registerModel.create(newRegistration, function (err, newCreated) {
+					if (err) {
+						console.log(err);
+					} else {
+						errorMsg = "Registration done successfully";
+						res.render("login");
+					}
+				});
 			}
 		}
-	});
-	if (flag) {
-		var newRegistration = {
-			userName: userName,
-			emailId: email,
-			userId: username,
-			password: password,
-			confirmPassword: cnfpassword
-		};
-		registerModel.create(newRegistration, function (err, newCreated) {
-			if (err) {
-				console.log(err);
-			} else {
-				errorMsg = "Registration done successfully";
-				res.render("login");
-			}
-		});
-	}
+	});	
 });
 
 //Routes
-app.listen(process.env.PORT, process.env.IP, function(){
-	console.log('server listening on port 3000');
-});
-
-// app.listen(3000, function () {
+// app.listen(process.env.PORT, process.env.IP, function(){
 // 	console.log('server listening on port 3000');
 // });
+
+app.listen(3000, function () {
+	console.log('server listening on port 3000');
+});
